@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:background="@color/light_gray">
+
+        <!-- Logo Placeholder -->
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_piggy_bank"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="42dp"/>
+
+        <!-- Welcome Message -->
+        <TextView
+            android:id="@+id/textViewWelcomeMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Here? "
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/green2"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Sign-up Prompt -->
+        <TextView
+            android:id="@+id/textViewLoginToContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please sign up to start using MoneyWise:"
+            android:textSize="17sp"
+            android:textColor="@color/gray"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="start"/>
+
+        <!-- Name TextInputLayout -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:textColorHint="@color/gray"
+            app:startIconDrawable="@drawable/ic_person_24"
+            app:startIconContentDescription="Name">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Email TextInputLayout -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:textColorHint="@color/gray"
+            app:startIconDrawable="@drawable/ic_mail_24"
+            app:startIconContentDescription="Email"
+            android:layout_marginTop="5dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password TextInputLayout -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            app:passwordToggleEnabled="true"
+            android:textColorHint="@color/gray"
+            app:startIconDrawable="@drawable/ic_password_24"
+            app:startIconContentDescription="Password"
+            app:endIconTint="@color/black"
+            android:layout_marginTop="5dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Confirm Password TextInputLayout -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            app:passwordToggleEnabled="true"
+            android:textColorHint="@color/gray"
+            app:startIconDrawable="@drawable/ic_password_24"
+            app:startIconContentDescription="Confirm Password"
+            app:endIconTint="@color/black"
+            android:layout_marginTop="5dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Register Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/green1"
+            android:layout_marginTop="24dp"/>
+
+
+        <!-- Log in TextView -->
+        <TextView
+            android:id="@+id/textViewLogIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You already have an account? Log in!"
+            android:textColor="@color/yellow1"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <!-- Logo Image View -->
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo_app"
+            android:scaleType="centerCrop"/>
+
+        <!-- App Name TextView -->
+        <TextView
+            android:id="@+id/textViewAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageViewLogo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="MoneyWise"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="@color/green2"/>
+    </RelativeLayout>
+
+</RelativeLayout>

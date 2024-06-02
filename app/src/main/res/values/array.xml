@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="circle_colors">
+        <item>@color/green1</item> <!-- Uncategorized: green1 -->
+        <item>@color/pink</item> <!-- Food: Pink -->
+        <item>@color/green</item> <!-- Entertainment: Green -->
+        <item>@color/blue</item> <!-- Transportation: Blue -->
+        <item>@color/brown</item> <!-- Home: Brown -->
+        <item>@color/purple</item> <!-- Clothing: Purple -->
+        <item>@color/navy</item> <!-- Car: Navy -->
+        <item>@color/orange</item> <!-- Electronics: Orange -->
+        <item>@color/red</item> <!-- Health and Beauty: Red -->
+        <item>@color/cyan</item> <!-- Education: Cyan -->
+        <item>@color/yellow</item> <!-- Children: Yellow -->
+        <item>@color/gray</item> <!-- Work: Gray -->
+        <item>@color/maroon</item> <!-- Bureaucracy: Maroon -->
+        <item>@color/deep_gold</item> <!-- Gifts: Deep Gold -->
+        <item>@color/black</item> <!-- Bank: Black -->
+    </array>
+</resources>

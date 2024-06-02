@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:gravity="center_vertical">
+
+
+
+    <!-- Container for Category, Title, Date, and Amount TextViews -->
+    <RelativeLayout
+        android:id="@+id/detailsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+
+        <!-- Category TextView -->
+        <TextView
+            android:id="@+id/subCategoryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="Sub Category Text"
+            android:textSize="20dp"
+            android:singleLine="true"
+            android:ellipsize="end"/>
+
+        <!-- Title TextView -->
+        <TextView
+            android:id="@+id/startDate_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subCategoryTextView"
+            android:layout_alignStart="@id/subCategoryTextView"
+            android:text="Start Date: dd-MM-YYYY"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15dp"/>
+
+        <!-- Title TextView -->
+        <TextView
+            android:id="@+id/endDate_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/startDate_textview"
+            android:layout_alignParentEnd="true"
+            android:text="End Date: dd-MM-YYYY"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15dp"/>
+
+        <!-- Amount TextView -->
+        <TextView
+            android:id="@+id/amountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="123456.789€"
+            android:textSize="16dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"/>
+
+    </RelativeLayout>
+
+    <!-- Line at the bottom -->
+    <View
+        android:id="@+id/lineView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/detailsContainer"
+        android:layout_alignStart="@id/detailsContainer"
+        android:background="@android:color/darker_gray" />
+</RelativeLayout>

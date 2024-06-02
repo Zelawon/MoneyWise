@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main Content -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Top App Bar -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/top_app_bar_layout"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <!-- Toolbar -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary">
+
+                <!-- Menu/Navigation Icon -->
+                <ImageView
+                    android:id="@+id/menu_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_menu_24"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:onClick="onMenuIconClick"
+                    android:layout_gravity="center_vertical"/>
+
+                <!-- Title Text -->
+                <TextView
+                    android:id="@+id/title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Set Budgets"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="center_vertical|start"/>
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- ScrollView for Budget Categories -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/top_app_bar_layout"
+            android:layout_above="@id/empty_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <!-- Food Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_food"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_food_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Food:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_food"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+
+                <!-- Entertainment Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_entertainment"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_entertainment_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Entertainment:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_entertainment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+
+                <!-- Transportation Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_transportation"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_transportation_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Transportation:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_transportation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+
+                <!-- Home Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_home"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_home_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"                        android:layout_height="wrap_content"
+                        android:text="Home:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+
+                <!-- Clothing Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_clothing"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_clothing_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"                        android:layout_height="wrap_content"
+                        android:text="Clothing:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_clothing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+
+                <!-- Car Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_car"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_car_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"                        android:layout_height="wrap_content"
+                        android:text="Car:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+
+                <!-- Electronics Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_electronics"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_electronics_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"                        android:layout_height="wrap_content"
+                        android:text="Electronics:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_electronics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+
+                <!-- Health and Beauty Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_health_and_beauty"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_health_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"                        android:layout_height="wrap_content"
+                        android:text="Health and Beauty:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_health_and_beauty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+
+                <!-- Education Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_education"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_education_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"                        android:layout_height="wrap_content"
+                        android:text="Education:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_education"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+
+                <!-- Children Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_children"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_children_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"                        android:layout_height="wrap_content"
+                        android:text="Children:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_children"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+
+                <!-- Work Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_work"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_work_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"                        android:layout_height="wrap_content"
+                        android:text="Work:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_work"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+
+                <!-- Bureaucracy Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_bureaucracy"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_bureaucracy_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"                        android:layout_height="wrap_content"
+                        android:text="Bureaucracy:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_bureaucracy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+
+                <!-- Gifts Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_gifts"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_gifts_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"                        android:layout_height="wrap_content"
+                        android:text="Gifts:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_gifts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+
+                <!-- Bank Category Item -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_bank"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_bank_24"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"                        android:layout_height="wrap_content"
+                        android:text="Bank:"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/budget_amount_bank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Loading..."
+                        android:textColor="@color/green4"
+                        android:layout_gravity="center_vertical"
+                        android:ems="6"
+                        android:gravity="end"
+                        android:textColorHint="@color/dark_gray"
+                        android:focusable="false"
+                        android:clickable="true"/>
+                </LinearLayout>
+                <!-- Line at the bottom -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/darker_gray" />
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <View
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"/>
+
+    </RelativeLayout>
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_drawer_header"
+        app:menu="@menu/nav_drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

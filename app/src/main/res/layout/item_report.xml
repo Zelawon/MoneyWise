@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/category_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/black"
+            android:gravity="center_vertical"
+            android:text="Category Text"
+            android:textSize="20dp"
+            android:singleLine="true"
+            android:ellipsize="end"/>
+
+        <!-- Amount TextView -->
+        <TextView
+            android:id="@+id/amount_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:text="123456.789€"
+            android:textColor="@android:color/black"
+            android:textSize="18dp"/>
+
+
+</RelativeLayout>

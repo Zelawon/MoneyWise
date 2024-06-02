@@ -1,0 +1,63 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/main_item1"
+        android:title="Home">
+        <menu>
+            <item
+                android:id="@+id/home_item"
+                android:title="Home"
+                android:icon="@drawable/ic_home_24"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/main_item2"
+        android:title="Operations">
+        <menu>
+            <item
+                android:id="@+id/setBudget_item"
+                android:title="Set Budgets"
+                android:icon="@drawable/ic_budget_24"/>
+
+            <item
+                android:id="@+id/recurringPayments_item"
+                android:title="Recurring Payments"
+                android:icon="@drawable/ic_recurring_payments_24"/>
+
+            <item
+                android:id="@+id/plannedTransactions_item"
+                android:title="Planned Transactions"
+                android:icon="@drawable/ic_planned_transactions_24"/>
+        </menu>
+
+    </item>
+    <item
+        android:id="@+id/main_item4"
+        android:title="Account Management">
+        <menu>
+            <item
+                android:id="@+id/clearDatabase_item"
+                android:title="Clear Database"
+                android:icon="@drawable/ic_database_clear_24"/>
+            <item
+                android:id="@+id/deleteAccount_item"
+                android:title="Delete Account"
+                android:icon="@drawable/ic_delete_account_24"/>
+            <item
+                android:id="@+id/logout_item"
+                android:title="Logout"
+                android:icon="@drawable/ic_logout_24"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/main_item3"
+        android:title="About">
+        <menu>
+            <item
+                android:id="@+id/about_item"
+                android:title="About"
+                android:icon="@drawable/ic_info_24"/>
+        </menu>
+    </item>
+</menu>

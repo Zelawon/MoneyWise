@@ -1,0 +1,60 @@
+<!-- custom_dialog_layout.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/light_gray">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dialog Title"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/green1"
+        android:paddingBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/dialog_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Input"
+        android:textSize="18dp"
+        android:textColorHint="@color/dark_gray"
+        android:textColor="@color/black"
+        android:maxLines="1"
+        android:singleLine="true"/>
+
+    <!-- Grid for buttons -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="1"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+        <android.widget.Button
+            android:id="@+id/dialog_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Cancel"
+            android:background="@color/light_gray"
+            android:textColor="@color/light_red"
+            android:textSize="18dp"/>
+        <android.widget.Button
+            android:id="@+id/dialog_ok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="OK"
+            android:background="@color/light_gray"
+            android:textColor="@color/green1"
+            android:textSize="18dp"/>
+    </GridLayout>
+
+</LinearLayout>

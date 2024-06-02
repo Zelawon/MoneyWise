@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_transactions"
+        android:title="Transactions"
+        android:icon="@drawable/ic_transactions_24" />
+    <item
+        android:id="@+id/menu_review"
+        android:title="Review"
+        android:icon="@drawable/ic_review_24" />
+    <item
+        android:id="@+id/menu_summary"
+        android:title="Summary"
+        android:icon="@drawable/ic_bar_chart_24" />
+    <item
+        android:id="@+id/menu_reports"
+        android:title="Reports"
+        android:icon="@drawable/ic_pie_chart_24" />
+</menu>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main Content -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Top App Bar -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/top_app_bar_layout"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <!-- Toolbar -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary">
+
+                <!-- Menu/Navigation Icon -->
+                <ImageView
+                    android:id="@+id/menu_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_close_24"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <!-- Title Text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Categories Summary"
+                    android:textSize="20dp"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="center_vertical|start"/>
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:id="@+id/empty_view2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/green4"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_below="@id/top_app_bar_layout">
+            <TextView
+                android:id="@+id/report_expanded_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:textSize="18dp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/empty_view3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/empty_view2"
+            android:gravity="center">
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="350dp"
+                android:layout_height="300dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/empty_view4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/empty_view3"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/backgound_layout"
+            android:orientation="horizontal">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/report_expanded_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"/>
+
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

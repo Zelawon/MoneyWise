@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#CABBBBBB" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+    <!-- Background with rounded corners -->
+    <item android:top="0dp" android:right="0.5dp" android:left="0.5dp" android:bottom="1.5dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white" /> <!-- Background color of the layout -->
+            <corners android:radius="10dp" /> <!-- Radius of the corners in dp -->
+        </shape>
+    </item>
+</layer-list>

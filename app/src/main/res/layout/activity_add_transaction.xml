@@ -1,0 +1,434 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Toolbar -->
+
+    <!-- ScrollView -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_24"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:onClick="onBackIconClick"
+            android:layout_gravity="center_vertical"/>
+
+        <!-- Title Text -->
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Transaction"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:layout_gravity="center_vertical|start"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <!-- Content Layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="16dp"
+            android:background="@color/light_gray">
+
+            <!-- LinearLayout to hold EditText and TextView -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- EditText for amount -->
+                <TextView
+                    android:id="@+id/amount"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:textColor="@color/black"
+                    android:text="0"
+                    android:inputType="numberDecimal"/>
+
+                <!-- TextView for Euro symbol -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+            <!-- Add space -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+
+            <!-- LinearLayout for Category -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_category_24"
+                    android:layout_marginEnd="8dp"/>
+
+                <!-- TextView -->
+                <TextView
+                    android:id="@+id/category_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Select category"
+                    android:textColorHint="@color/black"
+                    android:textSize="18dp"
+                    android:background="@drawable/background_textview"
+                    android:textColor="@color/black"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+            <!-- Add space -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+
+            <!-- LinearLayout for Sub-Category -->
+            <LinearLayout
+                android:id="@+id/sub_category_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_category_24"
+                    android:layout_marginEnd="8dp"/>
+
+                <!-- TextView -->
+                <TextView
+                    android:id="@+id/sub_category_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Select sub-category"
+                    android:textColorHint="@color/black"
+                    android:textSize="18dp"
+                    android:background="@drawable/background_textview"
+                    android:textColor="@color/black"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+
+            <!-- Add space -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+
+            <!-- LinearLayout for Expense and Income -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/icon2"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_add_subtract_24"
+                    android:layout_marginEnd="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical|center_horizontal">
+
+                    <!-- RadioGroup for Expense and Income -->
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_vertical">
+
+                        <!-- Expense RadioButton -->
+                        <RadioButton
+                            android:id="@+id/radio_expense"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Expense"
+                            android:checked="true"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"/>
+
+                        <!-- Income RadioButton -->
+                        <RadioButton
+                            android:id="@+id/radio_income"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Income"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"/>
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Add space -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+
+            <!-- LinearLayout transaction title -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/icon3"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_pen_24"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/transaction_title_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="18dp"
+                    android:hint="Insert transaction title"
+                    android:background="@drawable/background_textview"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+            <!-- Add space -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+
+            <!-- LinearLayout date picker -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/icon4"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_calendar_24"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/date_picker_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="18dp"
+                    android:hint="Select date"
+                    android:background="@drawable/background_textview"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+            <!-- Add space -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+
+            <!-- LinearLayout notes -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/icon5"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_note_24"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/notes_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="18dp"
+                    android:hint="Insert note"
+                    android:background="@drawable/background_textview"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+            <!-- Add space -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+
+            <!-- LinearLayout for Recurring payments -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/icon6"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_recurring_payments_24"
+                    android:layout_marginEnd="8dp"/>
+
+                <!-- SwitchMaterial for Recurring payment -->
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/recurring_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="false"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="18dp"
+                    android:text="Recurring Payment"/>
+            </LinearLayout>
+
+            <!-- Add space -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+
+            <!-- LinearLayout frequency -->
+            <LinearLayout
+                android:id="@+id/frequency_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/icon7"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_history_24"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/frequency_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="18dp"
+                    android:hint="Select frequency"
+                    android:background="@drawable/background_textview"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+            <!-- Add space -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+
+            <!-- LinearLayout end date -->
+            <LinearLayout
+                android:id="@+id/end_date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/icon8"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_calendar_24"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/end_date_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="18dp"
+                    android:hint="Select end date"
+                    android:background="@drawable/background_textview"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- OK Button -->
+    <Button
+        android:id="@+id/ok_transacion_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp"
+        android:layout_above="@id/empty_view"/>
+
+    <View
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"/>
+</RelativeLayout>

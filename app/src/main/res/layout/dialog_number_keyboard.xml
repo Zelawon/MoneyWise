@@ -1,0 +1,176 @@
+<!-- dialog_custom.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/light_gray">
+
+    <!-- TextView on top -->
+    <TextView
+        android:id="@+id/dialog_amount_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="16dp"
+        android:text="0.00"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@color/yellow1"
+        android:background="@color/green1"
+        android:gravity="right|center"/>
+
+    <!-- Grid for buttons -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="4"
+        android:orientation="horizontal">
+
+        <!-- Buttons -->
+        <!-- Row1 -->
+        <android.widget.Button
+            android:id="@+id/button_7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="7"
+            android:background="@drawable/background_button"
+            android:textColor="@color/yellow1"
+            android:textSize="24dp"/>
+        <android.widget.Button
+            android:id="@+id/button_8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="8"
+            android:background="@drawable/background_button"
+            android:textColor="@color/yellow1"
+            android:textSize="24dp"/>
+        <android.widget.Button
+            android:id="@+id/button_9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="9"
+            android:background="@drawable/background_button"
+            android:textColor="@color/yellow1"
+            android:textSize="24dp"/>
+
+        <!-- Row2 -->
+        <android.widget.Button
+            android:id="@+id/button_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="4"
+            android:background="@drawable/background_button"
+            android:textColor="@color/yellow1"
+            android:textSize="24dp"/>
+        <android.widget.Button
+            android:id="@+id/button_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="5"
+            android:background="@drawable/background_button"
+            android:textColor="@color/yellow1"
+            android:textSize="24dp"/>
+        <android.widget.Button
+            android:id="@+id/button_6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="6"
+            android:background="@drawable/background_button"
+            android:textColor="@color/yellow1"
+            android:textSize="24dp"/>
+
+        <!-- Row3 -->
+        <android.widget.Button
+            android:id="@+id/button_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="1"
+            android:background="@drawable/background_button"
+            android:textColor="@color/yellow1"
+            android:textSize="24dp"/>
+        <android.widget.Button
+            android:id="@+id/button_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="2"
+            android:background="@drawable/background_button"
+            android:textColor="@color/yellow1"
+            android:textSize="24dp"/>
+        <android.widget.Button
+            android:id="@+id/button_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="3"
+            android:background="@drawable/background_button"
+            android:textColor="@color/yellow1"
+            android:textSize="24dp"/>
+
+        <!-- Row4 -->
+        <android.widget.Button
+            android:id="@+id/button_commma"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="."
+            android:background="@drawable/background_button"
+            android:textColor="@color/yellow1"
+            android:textSize="24dp"/>
+        <android.widget.Button
+            android:id="@+id/button_0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="0"
+            android:background="@drawable/background_button"
+            android:textColor="@color/yellow1"
+            android:textSize="24dp"/>
+        <android.widget.Button
+            android:id="@+id/button_delete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="delete"
+            android:background="@drawable/background_button"
+            android:textColor="@color/light_red"
+            android:textSize="24dp"/>
+    </GridLayout>
+
+    <!-- Grid for actions -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="1"
+        android:orientation="horizontal">
+            <android.widget.Button
+                android:id="@+id/button_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="Cancel"
+                android:background="@drawable/background_button"
+                android:textColor="@color/gray"
+                android:textSize="24dp"/>
+            <android.widget.Button
+                android:id="@+id/button_ok"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="OK"
+                android:background="@drawable/background_button"
+                android:textColor="@color/green1"
+                android:textSize="24dp"/>
+    </GridLayout>
+
+
+
+</LinearLayout>

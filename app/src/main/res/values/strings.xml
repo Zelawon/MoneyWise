@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MoneyWise</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+
+    <string name="about_message">This application was made by <b>Fedi Khayati</b> for his Master\'s Final Project (Trabajo Fin de Máster),
+        as part of the Master program in Development of Mobile Applications and Services (Máster en Desarrollo de Aplicaciones y
+        Servicios para Móviles) at the Higher Technical School of Computer Systems Engineering, Polytechnic University of Madrid
+        (Escuela Técnica Superior de Ingeniería de Sistemas Informáticos, Universidad Politécnica de Madrid) during the school
+        year <b>2023/2024</b>.
+    </string>
+    <string name="about_message2">This work is licensed under the GNU General Public License version 3.0 <b>(GPL-3.0)</b></string>
+    <string name="about_message3">This work can be found on <b>GitHub</b> <i>[<a href="https://github.com/Zelawon/MoneyWise">https://github.com/Zelawon/MoneyWise</a>]</i>.\n\n<b>© Fedi Khayati [2024]</b></string>
+
+    <string-array name="frequency_units_array">
+        <item>Days</item>
+        <item>Weeks</item>
+        <item>Months</item>
+        <item>Years</item>
+    </string-array>
+
+</resources>

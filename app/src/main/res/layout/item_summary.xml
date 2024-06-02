@@ -1,0 +1,142 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:gravity="center_vertical">
+
+
+
+    <!-- Container for Category, Title, Date, and Amount TextViews -->
+    <RelativeLayout
+        android:id="@+id/detailsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+        <!-- Date TextView -->
+        <TextView
+            android:id="@+id/date_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="MM-yyyy"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:ellipsize="end"/>
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_below="@id/date_TextView"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/icon1"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_arrow_up_24" />
+
+            <TextView
+                android:id="@+id/income_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0€"
+                android:textColor="@color/green4"
+                android:textSize="14dp"
+                android:layout_marginEnd="3dp"/>
+
+            <ImageView
+                android:id="@+id/icon2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_arrow_down_24"/>
+
+            <TextView
+                android:id="@+id/expense_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0€"
+                android:layout_marginEnd="3dp"
+                android:textColor="#CC0000"
+                android:textSize="14dp"/>
+
+            <ImageView
+                android:id="@+id/icon3"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_sum_24"/>
+
+            <TextView
+                android:id="@+id/sum_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0€"
+                android:textColor="@color/black"
+                android:textSize="14dp"/>
+        </LinearLayout>
+
+        <!-- Title TextView -->
+        <TextView
+            android:id="@+id/numTransaction_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout"
+            android:layout_alignStart="@id/date_TextView"
+            android:text="X transactions"
+            android:textColor="@color/darkest_gray"
+            android:layout_marginTop="6dp"
+            android:textSize="15dp"/>
+
+        <!-- Title TextView -->
+        <TextView
+            android:id="@+id/textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/numTransaction_textview"
+            android:layout_alignStart="@id/date_TextView"
+            android:text="Most spending on :"
+            android:textColor="@color/darkest_gray"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/mostSpending_Textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview"
+            android:layout_alignStart="@id/date_TextView"
+            android:text="XXXXXXXXXXXXXXX"
+            android:textColor="@color/darkest_gray"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"/>
+        </LinearLayout>
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_alignParentEnd="true"
+            android:layout_width="120dp"
+            android:layout_height="120dp" />
+    </RelativeLayout>
+    <!-- Line at the bottom -->
+    <View
+        android:id="@+id/lineView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/detailsContainer"
+        android:layout_alignStart="@id/detailsContainer"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/darker_gray" />
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:gravity="center_vertical">
+
+    <!-- Circle for Item Color with ? letter -->
+    <RelativeLayout
+        android:id="@+id/itemColorCircle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/background_circle">
+
+        <TextView
+            android:id="@+id/itemColorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="\?"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!-- Container for Category, Title, Date, and Amount TextViews -->
+    <RelativeLayout
+        android:id="@+id/detailsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/itemColorCircle"
+        android:layout_marginStart="16dp"
+        android:layout_alignTop="@id/itemColorCircle">
+
+        <!-- Category TextView -->
+        <TextView
+            android:id="@+id/categoryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="Category Text"
+            android:textSize="20dp"
+            android:singleLine="true"
+            android:ellipsize="end"/>
+
+        <!-- Title TextView -->
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/categoryTextView"
+            android:layout_alignStart="@id/categoryTextView"
+            android:text="Title Text"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="16sp"/>
+
+        <!-- Date TextView -->
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="dd-MM-yyyy"
+            android:textSize="18dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Amount TextView -->
+        <TextView
+            android:id="@+id/amountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dateTextView"
+            android:layout_alignEnd="@id/dateTextView"
+            android:text="123456.789€"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+    <!-- Line at the bottom -->
+    <View
+        android:id="@+id/lineView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/detailsContainer"
+        android:layout_alignStart="@id/detailsContainer"
+        android:background="@android:color/darker_gray" />
+</RelativeLayout>
