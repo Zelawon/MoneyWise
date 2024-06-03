@@ -7,6 +7,7 @@
     <color name="gray">#9E9E9E</color>
     <color name="darkest_gray">#242222</color>
 
+    <color name="chartreuse">#7FFF00</color> <!-- used for error colors in some cases -->
 
     <color name="green1">#114232</color>
     <color name="green2">#A4B830</color>

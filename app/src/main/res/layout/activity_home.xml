@@ -176,7 +176,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="20dp"
             android:layout_above="@id/line_above_layout"
             android:src="@drawable/ic_plus_24"
             app:backgroundTint="@color/yellow1"

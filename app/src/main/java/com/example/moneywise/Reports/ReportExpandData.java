@@ -80,6 +80,8 @@ public class ReportExpandData extends AppCompatActivity {
         categoryColors.put("Children", Color.parseColor("#FFFF00"));
         categoryColors.put("Bureaucracy", Color.parseColor("#800000"));
         categoryColors.put("Gifts", Color.parseColor("#FFCC33"));
+        categoryColors.put("Bank", Color.parseColor("#000000"));
+        categoryColors.put("Work", Color.parseColor("#9E9E9E"));
 
         // categoryTotalMap contains the total amount for each income category
         ArrayList<PieEntry> entries = new ArrayList<>();
@@ -112,8 +114,6 @@ public class ReportExpandData extends AppCompatActivity {
             // Handle the case where categoryTotalMap is null
             Log.e(TAG, "categoryTotalMap is null");
         }
-
-
     }
 
     private void setupPieChart(final PieChart pieChart, ArrayList<PieEntry> entries, ArrayList<Integer> colors) {

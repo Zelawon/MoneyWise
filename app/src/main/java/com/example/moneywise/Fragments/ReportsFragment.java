@@ -177,6 +177,10 @@ public class ReportsFragment extends Fragment {
             }
 
             private void processPieCharts(List<Transaction> transactions) {
+                if (transactions == null) {
+                    Log.e(TAG, "Transactions list is null");
+                    return;
+                }
 
                 List<Transaction> expenseTransactions = new ArrayList<>();
                 List<Transaction> incomeTransactions = new ArrayList<>();
@@ -196,6 +200,8 @@ public class ReportsFragment extends Fragment {
                 categoryColors.put("Children", Color.parseColor("#FFFF00"));
                 categoryColors.put("Bureaucracy", Color.parseColor("#800000"));
                 categoryColors.put("Gifts", Color.parseColor("#FFCC33"));
+                categoryColors.put("Bank", Color.parseColor("#000000"));
+                categoryColors.put("Work", Color.parseColor("#9E9E9E"));
 
                 // Separate transactions based on their type
                 for (Transaction transaction : transactions) {
@@ -229,7 +235,13 @@ public class ReportsFragment extends Fragment {
                 ArrayList<Integer> colorsExpense = new ArrayList<>();
                 for (Map.Entry<String, Double> entry : categoryTotalExpensesMap.entrySet()) {
                     entriesExpense.add(new PieEntry(entry.getValue().floatValue(), entry.getKey()));
-                    colorsExpense.add(categoryColors.get(entry.getKey()));
+                    Integer color = categoryColors.get(entry.getKey());
+                    if (color != null) {
+                        colorsExpense.add(color);
+                    } else {
+                        // Provide a default color if the category color is not found
+                        colorsExpense.add(Color.parseColor("#7FFF00"));
+                    }
                     Log.d(TAG, "Expense Category: " + entry.getKey() + ", Total Amount: " + entry.getValue());
                 }
                 // categoryTotalIncomeMap contains the total amount for each income category
@@ -237,7 +249,13 @@ public class ReportsFragment extends Fragment {
                 ArrayList<Integer> colorsIncome = new ArrayList<>();
                 for (Map.Entry<String, Double> entry : categoryTotalIncomeMap.entrySet()) {
                     entriesIncome.add(new PieEntry(entry.getValue().floatValue(), entry.getKey()));
-                    colorsIncome.add(categoryColors.get(entry.getKey()));
+                    Integer color = categoryColors.get(entry.getKey());
+                    if (color != null) {
+                        colorsIncome.add(color);
+                    } else {
+                        // Provide a default color if the category color is not found
+                        colorsIncome.add(Color.parseColor("#7FFF00"));
+                    }
                     Log.d(TAG, "Income Category: " + entry.getKey() + ", Total Amount: " + entry.getValue());
                 }
                 setupPieChart(expensesPieChart, entriesExpense, colorsExpense);
@@ -290,7 +308,15 @@ public class ReportsFragment extends Fragment {
 
                 PieDataSet dataSet = new PieDataSet(entries, "");
                 dataSet.setDrawValues(false); // disable value labels
-                dataSet.setColors(colors);  // Retrieve colors
+
+                // Retrieve colors & Null check for colors
+                if (colors != null && !colors.isEmpty()) {
+                    dataSet.setColors(colors);  // Retrieve colors
+                } else {
+                    // Provide a default color set if colors is null or empty
+                    dataSet.setColors(Color.parseColor("#7FFF00"));
+                }
+
                 dataSet.setSliceSpace(3f); // Space between slices
                 dataSet.setSelectionShift(5f); // Shift distance for selected slice
 
