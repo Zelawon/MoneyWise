@@ -787,7 +787,7 @@ public class ReportsFragment extends Fragment {
             return;
         }
 
-        LineDataSet balanceDataSet = new LineDataSet(balanceEntries, "Expenses");
+        LineDataSet balanceDataSet = new LineDataSet(balanceEntries, "Balance");
         balanceDataSet.setColor(ContextCompat.getColor(requireContext(), R.color.yellow2));
         balanceDataSet.setValueTextColor(ContextCompat.getColor(requireContext(), R.color.yellow1));
 

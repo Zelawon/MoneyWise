@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignupActivity extends AppCompatActivity {
 
-    private EditText editTextEmail, editTextPassword, editTextConfirmPassword;
+    private EditText editTextEmail, editTextPassword, editTextConfirmPassword,editTextName;
     private Button buttonRegister;
     private TextView textViewLogIn;
     private FirebaseAuth firebaseAuth;
@@ -38,15 +38,17 @@ public class SignupActivity extends AppCompatActivity {
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
         buttonRegister = findViewById(R.id.buttonRegister);
         textViewLogIn = findViewById(R.id.textViewLogIn);
+        editTextName = findViewById(R.id.editTextName);
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name = editTextName.getText().toString().trim();
                 String email = editTextEmail.getText().toString().trim();
                 String password = editTextPassword.getText().toString().trim();
                 String confirmPassword = editTextConfirmPassword.getText().toString().trim();
 
-                if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword)) {
+                if (TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword)) {
                     SnackbarHelper.showSnackbar(v, "Please fill in all fields");
                 } else if (!isValidEmail(email)) {
                     SnackbarHelper.showSnackbar(v, "Please enter a valid email address");
