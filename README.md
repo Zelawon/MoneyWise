@@ -46,8 +46,11 @@ This project was developed as part of my **End of Master's Project** for the pro
    git clone https://github.com/Zelawon/MoneyWise.git
    ```
 2. Open the project in Android Studio.
-3. Sync Gradle files and resolve dependencies.
-4. Build and run the app on an Android emulator or a physical device.
+3. Set up Firebase:
+   - Add your `google-services.json` file to the `app/` directory.
+   - Update the Firebase configuration in the project settings.
+4. Sync Gradle files and resolve dependencies.
+5. Build and run the app on an Android emulator or a physical device.
 
 ## Screenshots
 
