@@ -58,7 +58,7 @@ This project was developed as part of my **End of Master's Project** for the pro
 </p>
 
 <p align="center">
-  <img src="https://github.com/Zelawon/MoneyWise/blob/master/appScreenshots/sidemenu.jpg" width="45%">
+  <img src="https://github.com/Zelawon/MoneyWise/blob/master/appScreenshots/sidemenu.jpg" width="50%">
   <img src="https://github.com/Zelawon/MoneyWise/blob/master/appScreenshots/reportsfrag.jpg" width="40%">
 </p>
 
