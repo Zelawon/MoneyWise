@@ -59,7 +59,7 @@ This project was developed as part of my **End of Master's Project** for the pro
 
 <p align="center">
   <img src="https://github.com/Zelawon/MoneyWise/blob/master/appScreenshots/sidemenu.jpg" width="30%">
-  <img src="https://github.com/Zelawon/MoneyWise/blob/master/appScreenshots/reportsfrag.jpg" width="30%">
+  <img src="https://github.com/Zelawon/MoneyWise/blob/master/appScreenshots/reportsfrag.jpg" width="25%">
 </p>
 
 ## License
