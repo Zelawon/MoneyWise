@@ -54,12 +54,12 @@ This project was developed as part of my **End of Master's Project** for the pro
 <p align="center">
   <img src="https://github.com/Zelawon/MoneyWise/blob/master/appScreenshots/Transactionfrag.jpg" width="30%">
   <img src="https://github.com/Zelawon/MoneyWise/blob/master/appScreenshots/summaryfrag.jpg" width="30%">
-  <img src="https://github.com/Zelawon/MoneyWise/blob/master/appScreenshots/reportsfrag.jpg" width="30%">
+  <img src="https://github.com/Zelawon/MoneyWise/blob/master/appScreenshots/adduserrecc.jpg" width="30%">
 </p>
 
 <p align="center">
   <img src="https://github.com/Zelawon/MoneyWise/blob/master/appScreenshots/sidemenu.jpg" width="45%">
-  <img src="https://github.com/Zelawon/MoneyWise/blob/master/appScreenshots/adduserrecc.jpg" width="45%">
+  <img src="https://github.com/Zelawon/MoneyWise/blob/master/appScreenshots/reportsfrag.jpg" width="30%">
 </p>
 
 ## License
